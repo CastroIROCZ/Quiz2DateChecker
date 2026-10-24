@@ -42,4 +42,10 @@ public class DateCheckerTest {
         assertFalse(dateChecker.has31Days(DateChecker.Month.FEBRUARY),
                     "February should not have 31 days");
     }
+
+    @Test
+    public void testNullMonth() {
+        assertThrows(IllegalArgumentException.class,
+                    () -> dateChecker.has31Days(null));
+    }
 }
