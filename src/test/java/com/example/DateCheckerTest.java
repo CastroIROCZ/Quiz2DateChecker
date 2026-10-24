@@ -48,4 +48,14 @@ public class DateCheckerTest {
         assertThrows(IllegalArgumentException.class,
                     () -> dateChecker.has31Days(null));
     }
+
+    @Test
+    public void testNullMonthExceptionMessage() {
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> dateChecker.has31Days(null)
+        );
+
+        assertEquals("Month cannot be null", exception.getMessage());
+    }
 }
