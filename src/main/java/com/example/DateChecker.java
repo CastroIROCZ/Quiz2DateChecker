@@ -1,6 +1,8 @@
 
 package com.example;
 
+import java.util.EnumSet;
+
 public class DateChecker {
 
     enum Month {
@@ -18,7 +20,7 @@ public class DateChecker {
         DECEMBER
     }
 
-    private Month[] monthsWith31Days = {
+    private static final EnumSet<Month> MONTHS_WITH_31_DAYS = EnumSet.of(
         Month.JANUARY,
         Month.MARCH,
         Month.MAY,
@@ -26,7 +28,7 @@ public class DateChecker {
         Month.AUGUST,
         Month.OCTOBER,
         Month.DECEMBER
-    };
+    );
 
     public boolean has31Days(Month month) {
 
@@ -34,12 +36,6 @@ public class DateChecker {
             throw new IllegalArgumentException("Month cannot be null");
         }
 
-        for (Month currentMonth : monthsWith31Days) {
-            if (currentMonth == month) {
-                return true;
-            }
-        }
-
-        return false;
+        return MONTHS_WITH_31_DAYS.contains(month);
     }
 }
