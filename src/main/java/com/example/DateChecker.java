@@ -1,21 +1,22 @@
 package com.example;
 
-enum Month{
-    JANUARY,
-    FEBUARY,
-    MARCH,
-    APRIL,
-    MAY,
-    JUNE,
-    JULY,
-    AUGUST,
-    SEPTEMBER,
-    OCTOBER,
-    NOVEMBER,
-    DECEMBER
-}
-
 public class DateChecker {
+
+    enum Month{
+        JANUARY,
+        FEBRUARY,
+        MARCH,
+        APRIL,
+        MAY,
+        JUNE,
+        JULY,
+        AUGUST,
+        SEPTEMBER,
+        OCTOBER,
+        NOVEMBER,
+        DECEMBER
+    }
+
     public boolean has31Days(Month month) {
         return false;
     }
